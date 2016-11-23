@@ -1,6 +1,6 @@
 require "nokogiri"
 require "open-uri"
-require "json"
+require "./kernel/models/ossoftware"
 
 indexes = {
 	"Fedora 7" => "http://archives.fedoraproject.org/pub/archive/fedora/linux/releases/7/Fedora/x86_64/os/Fedora/",
@@ -18,16 +18,19 @@ indexes = {
 
 indexes.each do |releasename, address|
 	puts("Processing #{releasename}")
-	structure = []
+	model = Chishiki::Models::OSSoftware.new
+	model.osname = "Linux"
+	model.release = releasename
+	model.addsource(address)
 
 	document = Nokogiri::HTML(open(address))
 	document.xpath("//a/text()").each do |packagename|
 		if packagename.to_s.end_with?(".rpm")
-			structure << packagename
+			model.addsoftware(packagename)
 		else
 			next
 		end
 	end
 
-	File.write("./Datastorage/Linux/Fedora/#{releasename}-packages-index.json", structure.to_json)
+	File.write("./Datastorage/Linux/Fedora/#{releasename}-packages-index.json", model.to_json)
 end
