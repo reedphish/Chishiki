@@ -1,0 +1,30 @@
+@import 'https://fonts.googleapis.com/css?family=Rubik';
+
+body {
+  font-family: "Rubik", sans-serif;;
+  font-size: 12px !important;
+}
+
+
+#footer {
+	background-color: #505151;
+	padding: 5px;
+	width: 100%;
+}
+
+#header {
+	background-color: #505151;
+	padding: 5px;
+	width: 100%;
+}
+
+#header > #logo {
+	color: #ffffff;
+	font-size: 1.5em;
+	font-weight: bold;
+}
+
+#header > div {
+	display: inline-block;
+	width: 100%;
+}
