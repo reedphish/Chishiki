@@ -24,7 +24,6 @@ body {
 	font-weight: bold;
 }
 
-#header > div {
-	display: inline-block;
+#query {
 	width: 100%;
 }
