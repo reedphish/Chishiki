@@ -10,5 +10,10 @@ module Kernel
       get "/" do
         erb :index
       end
+
+      post "/rest/search" do
+      	content_type :json
+  		{ :query => params[:query] }.to_json
+      end
    end
 end

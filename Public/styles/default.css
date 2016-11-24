@@ -1,29 +1,68 @@
-@import 'https://fonts.googleapis.com/css?family=Rubik';
+/*
 
 body {
   font-family: "Rubik", sans-serif;
   font-size: 12px !important;
 }
+*/ 
+
+@import url('https://fonts.googleapis.com/css?family=Pacifico');
+@import url('https://fonts.googleapis.com/css?family=Rubik');
 
 
-#footer {
-	background-color: #505151;
-	padding: 5px;
-	width: 100%;
+body {
+	margin: 0;
+	padding: 0;
 }
 
 #header {
-	background-color: #505151;
-	padding: 5px;
-	width: 100%;
+	line-height: 70px;
+	height: 70px;
 }
 
-#header > #logo {
-	color: #ffffff;
-	font-size: 1.5em;
-	font-weight: bold;
+#header span {
+	line-height: normal;
+	vertical-align: middle;
 }
 
-#query {
-	width: 100%;
+#footer {
+	position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.lightbackground {
+	background-color: #19528A !important;
+}
+
+.lighterbackground {
+	background-color: #336699 !important;
+}
+
+.darkbackground {
+	background-color: #0E3E6C !important;
+}
+
+.lighttext {
+	color: #ffffff !important;
+}
+
+.noborder {
+	border: 0px !important;
+}
+
+.centertext {
+	text-align: center !important;
+}
+
+.veryboldtext {
+	font-weight: bolder !important;
+}
+
+.bigtext {
+	font-size: 24px;
+}
+
+.curlytext {
+	font-family: "Pacifico";
 }
