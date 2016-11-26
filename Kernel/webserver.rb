@@ -2,6 +2,7 @@ require "rubygems"
 require "bundler/setup"
 require "sinatra"
 require "json"
+require "elasticsearch"
 
 module Kernel
   class WebServer < Sinatra::Base
@@ -12,8 +13,21 @@ module Kernel
       end
 
       post "/rest/search" do
+      	elsearch = Elasticsearch::Client.new
+
+      	searchresult = elsearch.search(
+      		index: "chishiki", 
+      		body: { 
+      			query: { 
+      				match: { 
+      					_all: params[:query]
+      				} 
+      			}
+      		}
+      	)
+
       	content_type :json
-  		{ :query => params[:query] }.to_json
+  		{ :query => searchresult }.to_json
       end
    end
 end
