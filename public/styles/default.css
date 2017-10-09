@@ -4,20 +4,14 @@ body {
   font-family: "Rubik", sans-serif;
   font-size: 12px !important;
 }
-*/ 
+*/
 
 @import url('https://fonts.googleapis.com/css?family=Pacifico');
 @import url('https://fonts.googleapis.com/css?family=Rubik');
 
-
-body {
-	margin: 0;
-	padding: 0;
-}
-
 #header {
-	line-height: 70px;
-	height: 70px;
+	line-height: 48px;
+	height: 50px;
 }
 
 #header span {
@@ -29,6 +23,21 @@ body {
 	position: fixed;
     bottom: 0;
     width: 100%;
+}
+
+.greenleftborder {
+		border-left: 3px solid #3CB29D;
+}
+
+.headerimage {
+	height: 32px;
+	width: 32px;
+	margin-left: 5px;
+	margin-right: 5px;
+}
+
+.fullwidth {
+	width: 100%;
 }
 
 .lightbackground {

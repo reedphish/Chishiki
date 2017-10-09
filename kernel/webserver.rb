@@ -6,7 +6,7 @@ require "elasticsearch"
 
 module Kernel
   class WebServer < Sinatra::Base
-      set :public_folder, "Public"
+      set :public_folder, "public"
 
       get "/" do
         erb :index
@@ -16,12 +16,12 @@ module Kernel
       	elsearch = Elasticsearch::Client.new
 
       	searchresult = elsearch.search(
-      		index: "chishiki", 
-      		body: { 
-      			query: { 
-      				match: { 
+      		index: "chishiki",
+      		body: {
+      			query: {
+      				match: {
       					_all: params[:query]
-      				} 
+      				}
       			}
       		}
       	)
