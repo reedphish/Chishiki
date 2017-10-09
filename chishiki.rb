@@ -1,5 +1,5 @@
 require "rubygems"
 require "bundler/setup"
-require "./kernel/webserver"
+require "./Kernel/webserver"
 
 Kernel::WebServer.run!

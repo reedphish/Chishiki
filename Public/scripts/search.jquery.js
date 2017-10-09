@@ -12,7 +12,17 @@
   					data: { query: searchbar.val() },
   					dataType: "json",
   					success: function(response) {
-  						console.log(response);
+              var table = $("#sresult").DataTable();
+              table.clear();
+
+              $.each(response["query"]["hits"]["hits"], function(key, data) {
+                 table.row.add([
+                   data["_source"]["release"],
+                   data["_source"]["osname"]
+                 ]);
+              });
+
+              table.draw(false);
   					}
     			});
     		}

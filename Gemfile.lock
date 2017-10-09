@@ -24,10 +24,11 @@ GEM
 
 PLATFORMS
   java
+  ruby
 
 DEPENDENCIES
   elasticsearch
   sinatra
 
 BUNDLED WITH
-   1.13.6
+   1.15.4
