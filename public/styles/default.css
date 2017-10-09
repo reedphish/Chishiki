@@ -26,7 +26,7 @@ body {
 }
 
 .greenleftborder {
-		border-left: 3px solid #3CB29D;
+		border-left: 3px solid #3CB29D !important;
 }
 
 .headerimage {
@@ -74,4 +74,20 @@ body {
 
 .curlytext {
 	font-family: "Pacifico";
+}
+
+.searchresult {
+	border-radius: 3px;
+	border: 1px solid #3CB29D;
+	margin: 3px;
+	padding: 3px;
+	background-color: #f1f1f1;
+}
+
+.searchresult > h1 {
+	font-size: 1em;
+}
+
+.searchresult > h2 {
+	font-size: 0.8em;
 }

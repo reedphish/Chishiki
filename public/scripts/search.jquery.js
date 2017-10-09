@@ -12,17 +12,18 @@
   					data: { query: searchbar.val() },
   					dataType: "json",
   					success: function(response) {
-              var table = $("#sresult").DataTable();
-              table.clear();
+              var resultspane = $("#searchresults");
+              resultspane.empty();
 
               $.each(response["query"]["hits"]["hits"], function(key, data) {
-                 table.row.add([
-                   data["_source"]["release"],
-                   data["_source"]["osname"]
-                 ]);
+                var div = $("<div>")
+                div.addClass("searchresult");
+                div.addClass("greenleftborder")
+                div.append($("<h1>").text(data["_source"]["release"]));
+                div.append($("<h2>").text(data["_source"]["osname"] ));
+                resultspane.append(div);
+                console.log(data);
               });
-
-              table.draw(false);
   					}
     			});
     		}
